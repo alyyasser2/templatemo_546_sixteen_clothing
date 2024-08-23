@@ -1,0 +1,417 @@
+<?php
+session_start();
+include('db.php');
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>Luxe\ Allure - About Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!--
+
+TemplateMo 546 SHOPPINGY\ Clothing
+
+https://templatemo.com/tm-546-sixteen-clothing
+
+-->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+  </head>
+
+  <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    <header class="">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.php"><h2>Luxe <em>Allure</em></h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.php">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="products.php">Our Products</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="about.php">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.php">Contact Us</a>
+              </li>
+              <?php
+                            if (isset($_SESSION['user'])) {
+                                echo '<li class="nav-item"><a class="nav-link" href="your_orders.php"><i class="fas fa-shopping-cart"></i> Your Orders</a></li>';
+                            }
+                            ?>
+              <?php
+    if (isset($_SESSION['user'])) {
+        // User is logged in, show the regular "Cart" link
+        echo '<li class="nav-item"><a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i> Cart</a></li>';
+    }
+?>
+              <?php
+              if (isset($_SESSION['user'])) {
+                  echo '<a href="logout.php" class="nav-item nav-link">Logout</a>';
+              } else {
+                  echo '<a href="trail_login.php" class="nav-item nav-link">Login</a>';
+              }
+              ?>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Content -->
+    <div class="page-heading about-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-content">
+              <h4>about us</h4>
+              <h2>our company</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="best-features about-features">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Our Background</h2>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="right-image">
+              <img src="assets/images/feature-image.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="left-content">
+            <h4>Who we are &amp; What we do?</h4>
+<p>At Luxe Allure, we are a passionate collective of designers, artisans, and innovators dedicated to crafting luxury fashion and fragrance experiences. Our brand embodies elegance, creativity, and individuality. We believe that true luxury lies in the details, and it’s our mission to help you express your unique style with sophistication and flair.</p>
+
+<p>Founded with a passion for fashion and a commitment to excellence, we aim to deliver the latest trends and timeless classics to fashion enthusiasts around the world. Our team is dedicated to sourcing the finest materials and ensuring that each piece meets our stringent quality standards.</p>
+
+<p>At Luxe Allure, we curate a wide range of clothing collections, including casual wear, formal attire, and exclusive fragrances. Our product line features high-quality fabrics, meticulous craftsmanship, and innovative designs that reflect our dedication to luxury and elegance.</p>
+
+<p>We prioritize customer satisfaction and aim to make your shopping experience seamless and enjoyable. Our user-friendly website allows you to browse and shop effortlessly, while our secure payment options ensure your transactions are safe.</p>
+
+<p>Thank you for choosing Luxe Allure. We look forward to helping you express your unique style and confidence through our carefully curated fashion and fragrance collections.</p>
+<ul class="social-icons">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="team-members">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Our Team Members</h2>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="team-member">
+              <div class="thumb-container">
+                <img src="assets/images/team_01.jpg" alt="">
+                <div class="hover-effect">
+                  <div class="hover-content">
+                    <ul class="social-icons">
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="down-content">
+                <h4>Johnny William</h4>
+                <span>CO-Founder</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="team-member">
+              <div class="thumb-container">
+                <img src="assets/images/team_02.jpg" alt="">
+                <div class="hover-effect">
+                  <div class="hover-content">
+                    <ul class="social-icons">
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="down-content">
+                <h4>Karry Pitcher</h4>
+                <span>Product Expert</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="team-member">
+              <div class="thumb-container">
+                <img src="assets/images/team_03.jpg" alt="">
+                <div class="hover-effect">
+                  <div class="hover-content">
+                    <ul class="social-icons">
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="down-content">
+                <h4>Michael Soft</h4>
+                <span>Chief Marketing</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="team-member">
+              <div class="thumb-container">
+                <img src="assets/images/team_04.jpg" alt="">
+                <div class="hover-effect">
+                  <div class="hover-content">
+                    <ul class="social-icons">
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="down-content">
+                <h4>Mary Cool</h4>
+                <span>Product Specialist</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="team-member">
+              <div class="thumb-container">
+                <img src="assets/images/team_05.jpg" alt="">
+                <div class="hover-effect">
+                  <div class="hover-content">
+                    <ul class="social-icons">
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="down-content">
+                <h4>George Walker</h4>
+                <span>Product Photographer</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="team-member">
+              <div class="thumb-container">
+                <img src="assets/images/team_06.jpg" alt="">
+                <div class="hover-effect">
+                  <div class="hover-content">
+                    <ul class="social-icons">
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="down-content">
+                <h4>Kate Town</h4>
+                <span>General Manager</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="service-item">
+              <div class="icon">
+                <i class="fa fa-gear"></i>
+              </div>
+              <div class="down-content">
+                <h4>Product Management</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat.</p>
+                <a href="#" class="filled-button">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-item">
+              <div class="icon">
+                <i class="fa fa-gear"></i>
+              </div>
+              <div class="down-content">
+                <h4>Customer Relations</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat.</p>
+                <a href="#" class="filled-button">Details</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-item">
+              <div class="icon">
+                <i class="fa fa-gear"></i>
+              </div>
+              <div class="down-content">
+                <h4>Global Collection</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat.</p>
+                <a href="#" class="filled-button">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="happy-clients">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Happy Partners</h2>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="owl-clients owl-carousel">
+              <div class="client-item">
+                <img src="assets/images/client-01.png" alt="1">
+              </div>
+              
+              <div class="client-item">
+                <img src="assets/images/client-01.png" alt="2">
+              </div>
+              
+              <div class="client-item">
+                <img src="assets/images/client-01.png" alt="3">
+              </div>
+              
+              <div class="client-item">
+                <img src="assets/images/client-01.png" alt="4">
+              </div>
+              
+              <div class="client-item">
+                <img src="assets/images/client-01.png" alt="5">
+              </div>
+              
+              <div class="client-item">
+                <img src="assets/images/client-01.png" alt="6">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="inner-content">
+              <p>Copyright &copy; 2020 SHOPPINGY Clothing Co.
+                        </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Additional Scripts -->
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/owl.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script src="assets/js/isotope.js"></script>
+    <script src="assets/js/accordions.js"></script>
+
+
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+
+
+  </body>
+
+</html>
